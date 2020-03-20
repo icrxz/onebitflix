@@ -3,7 +3,7 @@ class Player < ApplicationRecord
   belongs_to :movie
   belongs_to :user
 
-  #Actions
+  #Callbacks
   before_create :set_start_date
 
   private
