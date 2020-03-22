@@ -13,7 +13,7 @@ class DashboardService
     attr_reader :type, :user
 
     def group_by_category
-      categories = Category.includes(:movies. :series)
+      categories = Category.includes(:movies, :series)
       Api::V1::CategorySerializer.new(categories)
     end
 
