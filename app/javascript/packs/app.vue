@@ -1,49 +1,32 @@
 <template>
-  <v-container grid-list-md text-xs-center>
-    <v-layout row wrap>
-      <v-flex xs6 offset-xs3>
-        <v-tabs icons-and-text centered color="cyan">
-          <v-tabs-slider color="yellow"></v-tabs-slider>
-          <v-tab href="#tab-1">
-            Recents
-            <v-icon>phone</v-icon>
-          </v-tab>
-          <v-tab href="#tab-2">
-            Favorites
-            <v-icon>favorite</v-icon>
-          </v-tab>
-          <v-tab href="#tab-3">
-            Nearby
-            <v-icon>account_box</v-icon>
-          </v-tab>
-          <v-tab-item
-            v-for="i in 3"
-            :key="i"
-            :id="'tab-' + i"
-          >
-            <v-card flat>
-              <v-card-text>{{ text }}</v-card-text>
-            </v-card>
-          </v-tab-item>
-        </v-tabs>
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <v-app>
+    <Header/>
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+    <Footer/>
+  </v-app>
 </template>
  
 <script>
+  import Header from './components/shared/header.vue'
+  import Footer from './components/shared/footer.vue'
+  
   export default {
     data () {
       return {
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et'
+        
       }
+    },
+    components: {
+      'Footer': Footer,
+      'Header': Header
     }
   }
 </script>
  
-<style scoped>
-  p {
-    font-size: 2em;
-    text-align: center;
+<style>
+  #app{
+    background-color: #454545 !important;
   }
 </style>
