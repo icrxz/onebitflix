@@ -1,7 +1,9 @@
 <template>
   <v-app-bar flat short color="black" dark app>
     <v-toolbar-title>
-      <img :src='logo' class="logo"/>
+      <router-link to="/">
+        <img :src='logo' class="logo"/>
+      </router-link>
     </v-toolbar-title>
     <v-spacer/>
     <v-toolbar-items>

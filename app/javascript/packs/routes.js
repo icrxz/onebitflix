@@ -8,7 +8,7 @@ import WatchIndex from './components/watch/index.vue'
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    {path: '/home', component: HomeIndex},
+    {path: '/', component: HomeIndex},
     {path: '/watch/:id', component: WatchIndex}
   ]
 });
